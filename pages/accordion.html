@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+      #accordion h3 {
+        background-color: initial; 
+        color: black; 
+        margin-right: 50px;
+      }
+      #accordion div {
+        margin-right: 50px;
+      }
+      #accordion .ui-state-active {
+        background-color: rgb(131, 0, 109);
+        color: white;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+</head>
+<body>
+    <header>
+      <div>
+        <h1>JQUERY SESSION-WIDGETS</h1>
+      </div>
+      <div class="container">
+          <a href="../index.html" style="color: gold;">WIDGETS</a> |
+          <a href="../inter/drag.html">INTERACTIONS</a> |
+          <a href="../effect/addclass.html">EFFECTS</a>
+      </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="accordion.html" style="color: gold;">ACCORDION</a></li></ul>
+            <ul><li><a href="autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="button.html">BUTTON</a></li></ul>
+            <ul><li><a href="checkbox.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="menu.html">MENU</a></li></ul>
+            <ul><li><a href="progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="tabs.html">TABS</a></li></ul>
+            <ul><li><a href="tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>ACCORDION</u></h1>
+            <div id="accordion">
+                <h3>Section 1</h3>
+                <div>
+                  <p>
+                    An accordion is a UI component commonly used in web design to manage 
+                    content within limited space. It consists of expandable and collapsible
+                     sections, or panels, that allow users to reveal or hide specific content. 
+                     Each panel is typically labeled with a header or title, giving users a quick
+                      overview of what each section contains.
+                  </p>
+                </div>
+                <h3>Section 2</h3>
+                <div>
+                  <p>
+                    When a user clicks on a header, the associated panel expands to show the
+                     content within, while other sections can collapse, keeping the interface neat
+                      and organized. This functionality helps in presenting large amounts of content
+                       without overwhelming the user, making it a popular choice for FAQs, menus, 
+                       and content-heavy pages.
+                  </p>
+                </div>
+                <h3>Section 3</h3>
+                <div>
+                  <p>
+                    Additionally, accordions can be styled and customized to fit the aesthetic
+                     of a website, with control over color, size, font, and animation speed. 
+                     They are versatile elements that can be used in various contexts, from simple 
+                     informational displays to complex content structures. Overall, accordions 
+                     are a practical and visually appealing way to organize and control content flow on a webpage.
+                  </p>
+                  <ul>
+                    <li>Item one</li>
+                    <li>Item two</li>
+                    <li>Item three</li>
+                  </ul>
+                </div>
+                <h3>Section 4</h3>
+                <div>
+                  <p>
+                    Accordions can be implemented using HTML, CSS, and JavaScript, 
+                    with jQuery offering an easy and efficient way to create them. 
+                    The jQuery UI library has a built-in accordion widget that provides
+                     default styles and animations, letting developers quickly add interactive
+                      elements to their web pages without writing extensive code.
+                  </p>
+                  <p>
+                    Accordions also enhance user experience by reducing scrolling, 
+                    especially on mobile devices where screen space is limited. 
+                    By displaying only one section at a time, they allow users to 
+                    focus on specific information without distraction. Many modern accordions 
+                    also come with customizable animation options for smooth transitions, 
+                    creating a polished and engaging interface.
+                  </p>
+                </div>
+              </div>
+        </article>
+    </section>
+    <footer>
+        <p style="color: maroon;"></p>  
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $( "#accordion" ).accordion();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        fieldset {
+            width: fit-content;
+            box-sizing: border-box;
+        }
+
+        .ui-state-active {
+            background-color: maroon ;
+            color: white ;
+        }
+        
+        label {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <div>
+        <h1>JQUERY SESSION-WIDGETS</h1>
+      </div>
+      <div class="container">
+          <a href="../index.html" style="color: gold;">WIDGETS</a> |
+          <a href="../inter/drag.html">INTERACTIONS</a> |
+          <a href="../effect/addclass.html">EFFECTS</a>
+      </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="button.html">BUTTON</a></li></ul>
+            <ul><li><a href="checkbox.html" style="color: gold;">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="menu.html">MENU</a></li></ul>
+            <ul><li><a href="progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="tabs.html">TABS</a></li></ul>
+            <ul><li><a href="tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>CHECKBOX RADIO</u></h1>
+            <div class="widget">
+                <h1>Checkbox and radio button widgets</h1>
+               
+                <h2>Radio Group</h2>
+                <fieldset>
+                  <legend>Select a Location: </legend>
+                  <label for="radio-1">New York</label>
+                  <input type="radio" name="radio-1" id="radio-1">
+                  <label for="radio-2">Paris</label>
+                  <input type="radio" name="radio-1" id="radio-2">
+                  <label for="radio-3">London</label>
+                  <input type="radio" name="radio-1" id="radio-3">
+                </fieldset>
+               
+                <h2>Checkbox</h2>
+                <fieldset>
+                  <legend>Hotel Ratings: </legend>
+                  <label for="checkbox-1">2 Star</label>
+                  <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                  <label for="checkbox-2">3 Star</label>
+                  <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                  <label for="checkbox-3">4 Star</label>
+                  <input type="checkbox" name="checkbox-3" id="checkbox-3">
+                  <label for="checkbox-4">5 Star</label>
+                  <input type="checkbox" name="checkbox-4" id="checkbox-4">
+                </fieldset>
+               
+                <h2>Checkbox nested in label</h2>
+                <fieldset>
+                  <legend>Bed Type: </legend>
+                  <label for="checkbox-nested-1">2 Double
+                    <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-1">
+                  </label>
+                  <label for="checkbox-nested-2">2 Queen
+                    <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-2">
+                  </label>
+                  <label for="checkbox-nested-3">1 Queen
+                    <input type="checkbox" name="checkbox-nested-3" id="checkbox-nested-3">
+                  </label>
+                  <label for="checkbox-nested-4">1 King
+                    <input type="checkbox" name="checkbox-nested-4" id="checkbox-nested-4">
+                  </label>
+                </fieldset>
+              </div>
+        </article>
+    </section>
+    <footer>
+        <p style="color: maroon;"></p>  
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $(function() {
+          $("input").checkboxradio();
+        });
+    </script>
+</body>
+</html>

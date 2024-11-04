@@ -1,0 +1,62 @@
+header {
+    background-color: rgb(0, 11, 133);
+    color: rgb(251, 0, 255);
+    text-align: center;
+    padding: 10px;
+    border: solid 1px white;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #F5F5F5; 
+}
+
+.container a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container a:hover {
+    color: #FFD700;
+    padding: 3px;
+}
+nav {
+    background-color: maroon;
+    float: left;
+    width: 20%;
+    height: 720px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white; 
+    font-size: 15px;
+}
+nav ul a:hover{
+    color: rgb(255, 0, 225); 
+}
+
+article {
+    background-color: rgb(214, 214, 224);
+    float: left;
+    color: #800000; 
+    width: 75%;
+    height: 720px;
+    padding-left: 5%;
+}
+footer {
+    text-align: center;
+    background-color: #0010bc;
+    color: gold;
+    padding: 10px; 
+    font-size: 15px;
+    border: solid 1px white;
+    margin-top: 720px;
+
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #map {
+          width:500px;
+          height:350px;
+          float: right;
+          margin-right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION-WIDGETS</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html" style="color: gold;">WIDGETS</a> |
+            <a href="../inter/drag.html">INTERACTIONS</a> |
+            <a href="../effect/addclass.html">EFFECTS</a>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="button.html">BUTTON</a></li></ul>
+            <ul><li><a href="checkbox.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="menu.html">MENU</a></li></ul>
+            <ul><li><a href="progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="spinner.html" style="color: gold;">SPINNER</a></li></ul>
+            <ul><li><a href="tabs.html">TABS</a></li></ul>
+            <ul><li><a href="tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>SPINNER</u></h1>
+            <label for="lat">Latitude</label>
+            <input id="lat" name="lat" value="44.797">
+            <br>
+            <label for="lng">Longitude</label>
+            <input id="lng" name="lng" value="-93.278">
+            
+            <div id="map"></div>
+        </article>
+    </section>
+    <footer>
+        <p style="color: maroon;"></p>  
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="/resources/demos/external/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="../js/js.js"></script>
+    <script>
+        $( function() {
+          function latlong() {
+            return new google.maps.LatLng( $("#lat").val(), $("#lng").val() );
+          }
+          function position() {
+            map.setCenter( latlong() );
+          }
+          $( "#lat, #lng" ).spinner({
+            step: .001,
+            change: position,
+            stop: position
+          });
+       
+          var map = new google.maps.Map( $("#map")[0], {
+            zoom: 8,
+            center: latlong(),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          });
+        } );
+    </script>
+</body>
+</html>

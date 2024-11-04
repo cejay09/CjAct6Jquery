@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #progressbar {
+          margin-top: 20px;
+        }
+       
+        .progress-label {
+          font-weight: bold;
+          text-shadow: 1px 1px 0 #fff;
+        }
+       
+        .ui-dialog-titlebar-close {
+          display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION-WIDGETS</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html" style="color: gold;">WIDGETS</a> |
+            <a href="../inter/drag.html">INTERACTIONS</a> |
+            <a href="../effect/addclass.html">EFFECTS</a>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="button.html">BUTTON</a></li></ul>
+            <ul><li><a href="checkbox.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="menu.html">MENU</a></li></ul>
+            <ul><li><a href="progressbar.html" style="color: gold;">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="tabs.html">TABS</a></li></ul>
+            <ul><li><a href="tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>PROGRESS BAR</u></h1>
+            <div id="dialog" title="File Download">
+                <div class="progress-label">Starting download...</div>
+                <div id="progressbar"></div>
+              </div>
+              <button id="downloadButton">Start Download</button>
+        </article>
+    </section>
+    <footer>
+        <p style="color: maroon;"></p>  
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          var progressTimer,
+            progressbar = $( "#progressbar" ),
+            progressLabel = $( ".progress-label" ),
+            dialogButtons = [{
+              text: "Cancel Download",
+              click: closeDownload
+            }],
+            dialog = $( "#dialog" ).dialog({
+              autoOpen: false,
+              closeOnEscape: false,
+              resizable: false,
+              buttons: dialogButtons,
+              open: function() {
+                progressTimer = setTimeout( progress, 2000 );
+              },
+              beforeClose: function() {
+                downloadButton.button( "option", {
+                  disabled: false,
+                  label: "Start Download"
+                });
+              }
+            }),
+            downloadButton = $( "#downloadButton" )
+              .button()
+              .on( "click", function() {
+                $( this ).button( "option", {
+                  disabled: true,
+                  label: "Downloading..."
+                });
+                dialog.dialog( "open" );
+              });
+       
+          progressbar.progressbar({
+            value: false,
+            change: function() {
+              progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
+            },
+            complete: function() {
+              progressLabel.text( "Complete!" );
+              dialog.dialog( "option", "buttons", [{
+                text: "Close",
+                click: closeDownload
+              }]);
+              $(".ui-dialog button").last().trigger( "focus" );
+            }
+          });
+       
+          function progress() {
+            var val = progressbar.progressbar( "value" ) || 0;
+       
+            progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+       
+            if ( val <= 99 ) {
+              progressTimer = setTimeout( progress, 50 );
+            }
+          }
+       
+          function closeDownload() {
+            clearTimeout( progressTimer );
+            dialog
+              .dialog( "option", "buttons", dialogButtons )
+              .dialog( "close" );
+            progressbar.progressbar( "value", false );
+            progressLabel
+              .text( "Starting download..." );
+            downloadButton.trigger( "focus" );
+          }
+        } );
+    </script>
+</body>
+</html>

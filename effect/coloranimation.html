@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        .toggler { width: 500px; height: 200px; position: relative; }
+        #effect { width: 240px; height: 170px; padding: 0.4em; position: relative; background: #fff; }
+        #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+        #button{
+            background-color: rgb(6, 0, 182);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION-EFFECTS</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html">WIDGETS</a> |
+            <a href="../inter/drag.html">INTERACTIONS</a> |
+            <a href="addclass.html" style="color: gold;">EFFECTS</a>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="addclass.html">ADD CLASS</a></li></ul>
+            <ul><li><a href="coloranimation.html" style="color: gold;">COLOR ANIMATION</a></li></ul>
+            <ul><li><a href="easing.html">EASING</a></li></ul>
+            <ul><li><a href="effect.html">EFFECT</a></li></ul>
+            <ul><li><a href="hide.html">HIDE</a></li></ul>
+            <ul><li><a href="removeclass.html">REMOVE CLASS</a></li></ul>
+            <ul><li><a href="show.html">SHOW</a></li></ul>
+            <ul><li><a href="switchclass.html">SWITCH CLASS</a></li></ul>
+            <ul><li><a href="toggle.html">TOGGLE</a></li></ul>
+            <ul><li><a href="toggleclass.html">TOGGLE CLASS</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>COLOR ANIMATION</u></h1>
+            <div class="toggler">
+                <div id="effect" class="ui-widget-content ui-corner-all">
+                  <h3 class="ui-widget-header ui-corner-all">Animate</h3>
+                  <p>
+                    This functionality helps in presenting large amounts of content
+                       without overwhelming the user, making it a popular choice for FAQs, menus, 
+                       and content-heavy pages.
+                  </p>
+                </div>
+              </div>
+               
+              <button id="button" class="ui-state-default ui-corner-all">Toggle Effect</button>                            
+        </article>
+    </section>
+    <footer>
+        <p style="color: maroon;"></p>  
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          var state = true;
+          $( "#button" ).on( "click", function() {
+            if ( state ) {
+              $( "#effect" ).animate({
+                backgroundColor: "#aa0000",
+                color: "#fff",
+                width: 500
+              }, 1000 );
+            } else {
+              $( "#effect" ).animate({
+                backgroundColor: "#fff",
+                color: "#000",
+                width: 240
+              }, 1000 );
+            }
+            state = !state;
+          });
+        } );
+    </script>
+</body>
+</html>

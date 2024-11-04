@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        #resizable { width: 150px; height: 150px; padding: 0.5em; }
+        #resizable h3 { text-align: center; margin: 0; }
+        .ui-resizable-helper { border: 1px dotted gray; }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION-INTERACTIONS</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html">WIDGETS</a> |
+            <a href="drag.html" style="color: gold;">INTERACTIONS</a> |
+            <a href="../effect/addclass.html">EFFECTS</a>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="drag.html">DRAGGABLE</a></li></ul>
+            <ul><li><a href="drop.html">DROPPABLE</a></li></ul>
+            <ul><li><a href="resize.html" style="color: gold;">RESIZEABLE</a></li></ul>
+            <ul><li><a href="selectable.html">SELECTABLE</a></li></ul>
+            <ul><li><a href="sort.html">SORTABLE</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>RESIZEABLE</u></h1>
+            <div id="resizable" class="ui-widget-content">
+                <h3 class="ui-widget-header">Animate</h3>
+            </div>      
+        </article>
+    </section>
+    <footer>
+        <p style="color: maroon;"></p>  
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#resizable" ).resizable({
+            animate: true
+          });
+        } );
+    </script>
+</body>
+</html>
